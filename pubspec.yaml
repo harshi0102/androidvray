@@ -1,0 +1,25 @@
+name: flutter12
+description: A new Flutter project.
+
+# Add the environment SDK constraint (correct placement)
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Add this line to include Poppins font
+  google_fonts: ^2.3.2
+
+flutter:
+  # Specify the assets folder for images
+  assets:
+    - assets/images/  # Make sure this path is correct and matches your folder structure
+
+  # Add this to the fonts section if you want to bundle Poppins locally
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700

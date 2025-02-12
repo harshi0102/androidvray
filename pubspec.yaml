@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   # Add this line to include Poppins font
-  google_fonts: ^2.3.2
+  google_fonts: ^4.0.4
 
 flutter:
   # Specify the assets folder for images

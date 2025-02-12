@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'profile_details_layout.dart'; // Import the ProfileDetailsLayout
+import 'onboarding_3_profile_details.dart'; // Import the Onboarding3ProfileDetails
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
@@ -169,7 +169,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ProfileDetailsLayout()),
+            MaterialPageRoute(builder: (context) => Onboarding3ProfileDetails()),
           );
         },
         style: ElevatedButton.styleFrom(

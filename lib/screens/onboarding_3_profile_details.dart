@@ -4,19 +4,25 @@ class Onboarding3ProfileDetails extends StatefulWidget {
   const Onboarding3ProfileDetails({super.key});
 
   @override
-  Onboarding3ProfileDetailsState createState() =>
-      Onboarding3ProfileDetailsState();
+  Onboarding3ProfileDetailsState createState() => Onboarding3ProfileDetailsState();
 }
 
 class Onboarding3ProfileDetailsState extends State<Onboarding3ProfileDetails> {
   String textField1 = '';
   String textField2 = '';
   String textField3 = '';
-  String textField4 = '';
+  String textField4 = 'Frugal Saver'; // Default placeholder
+
+  // List of titles for the user to select from
+  List<String> titles = [
+    'Frugal Saver',
+    'Big Spender',
+    'Money Master',
+    'Saver Extraordinaire',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    // Get the screen width and height for responsiveness
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
@@ -203,7 +209,7 @@ class Onboarding3ProfileDetailsState extends State<Onboarding3ProfileDetails> {
                           ],
                         ),
                       ),
-                      // Title Input Section
+                      // Title Input Section with Arrow
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Column(
@@ -244,7 +250,7 @@ class Onboarding3ProfileDetailsState extends State<Onboarding3ProfileDetails> {
                                         });
                                       },
                                       decoration: InputDecoration(
-                                        hintText: "Frugal Saver",
+                                        hintText: textField4, // Dynamically change the placeholder
                                         isDense: true,
                                         contentPadding:
                                             EdgeInsets.symmetric(vertical: 0),
@@ -254,12 +260,34 @@ class Onboarding3ProfileDetailsState extends State<Onboarding3ProfileDetails> {
                                   ),
                                 ),
                                 SizedBox(width: 10),
-                                Container(
-                                  width: 14,
-                                  height: 14,
-                                  child: Image.network(
-                                    "https://i.imgur.com/1tMFzp8.png",
-                                    fit: BoxFit.fill,
+                                GestureDetector(
+                                  onTap: () {
+                                    // Show a list of titles for selection
+                                    showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return ListView.builder(
+                                          itemCount: titles.length,
+                                          itemBuilder: (context, index) {
+                                            return ListTile(
+                                              title: Text(titles[index]),
+                                              onTap: () {
+                                                setState(() {
+                                                  textField4 = titles[index];
+                                                });
+                                                Navigator.pop(context);
+                                              },
+                                            );
+                                          },
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    'assets/images/iconamoon_arrow-down-2.png', // Replace with your arrow down image path
+                                    width: 24,
+                                    height: 24,
+                                    color: Color(0xFF444444),
                                   ),
                                 ),
                               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './HomeTab.dart'; // Import the HomeTab screen
 
 class Onboarding3ProfileDetails extends StatefulWidget {
   const Onboarding3ProfileDetails({super.key});
@@ -355,7 +356,10 @@ class Onboarding3ProfileDetailsState extends State<Onboarding3ProfileDetails> {
       padding: EdgeInsets.only(bottom: 20),
       child: InkWell(
         onTap: () {
-          print('Pressed');
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomeTab()),
+          );
         },
         child: Container(
           decoration: BoxDecoration(

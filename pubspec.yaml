@@ -8,18 +8,36 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # Add this line to include Poppins font
   google_fonts: ^4.0.4
+  flutter_svg: ^2.0.7
 
 flutter:
   # Specify the assets folder for images
   assets:
     - assets/images/  # Make sure this path is correct and matches your folder structure
 
-  # Add this to the fonts section if you want to bundle Poppins locally
+  # Add this to the fonts section for Poppins and Inter fonts
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 700
+    # - family: Inter
+    #   fonts:
+    #     - asset: assets/fonts/Inter-Regular.ttf
+    #     - asset: assets/fonts/Inter-Light.ttf
+    #     - asset: assets/fonts/Inter-Thin.ttf
+    #     - asset: assets/fonts/Inter-ExtraLight.ttf
+    #     - asset: assets/fonts/Inter-SemiBold.ttf
+    #     - asset: assets/fonts/Inter-Medium.ttf
+    #     - asset: assets/fonts/Inter-Bold.ttf
+    #     - asset: assets/fonts/Inter-ExtraBold.ttf
+    #     - asset: assets/fonts/Inter-Black.ttf
+
+  uses-material-design: true
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
